@@ -11,7 +11,6 @@ Acá encontrará la presentación, datos, y códigos del curso de Valoración Ec
 - Preferencias declaradas: CVM	Cap. 19
 - Preferencias declaradas: Choice experiment	Cap. 19
 
-Libro de texto
 Phaneuf, D. J., & Requate, T. (2016). A course in environmental economics: theory, policy, and practice. Cambridge University Press.
 
 
