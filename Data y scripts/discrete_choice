@@ -1,0 +1,28 @@
+library(readxl)
+library(mlogit)
+
+
+#Detalles de homeheating data: https://search.r-project.org/CRAN/refmans/mlogitBMA/html/heating.html#
+
+home_heating <- read_excel("C:/Users/andresmv/OneDrive - Universidad del Norte/Drive/Uninorte/Uninorte-docencia/Doctorado Perú/Valoración 202530/data y script/home_heating.xlsx")
+
+hh<-dfidx(home_heating,shape="wide", choice="choice",varying=3:12, sep="_",idx="id",idnames=c("chid","alt"))
+
+clhh<-mlogit(choice~ic+oc,data=hh)
+summary(clhh)
+
+
+clhh2<-mlogit(choice~ic+oc|income,data=hh)
+summary(clhh2)
+
+
+## Fishing Cameron y Trivedi
+
+data("Fishing", package = "mlogit")
+Fish <- dfidx(Fishing, varying = 2:9, shape = "wide", choice = "mode")
+
+clfish<-mlogit(mode ~ price + catch, data = Fish)
+summary(clfish)
+
+clfish2 <- mlogit(mode ~ price + catch | income, data = Fish)
+summary(clfish2)
